@@ -1,3 +1,5 @@
-const schemas = [];
+import skill from '@/schema/skill';
 
-export default schemas;
+const schemaTypes = [skill];
+
+export default schemaTypes;
