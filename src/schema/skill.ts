@@ -9,6 +9,12 @@ const skill = {
       type: 'string',
     },
     {
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: [{ type: 'skillCategory' }],
+    },
+    {
       name: 'logo',
       title: 'Logo',
       type: 'image',
