@@ -11,8 +11,17 @@ const skill = {
     {
       name: 'category',
       title: 'Category',
-      type: 'reference',
-      to: [{ type: 'skillCategory' }],
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Frontend', value: 'frontend' },
+          { title: 'Backend', value: 'backend' },
+          {
+            title: 'Framework',
+            value: 'framework',
+          },
+        ],
+      },
     },
     {
       name: 'logo',
