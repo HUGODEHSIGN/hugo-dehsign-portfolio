@@ -20,6 +20,7 @@ const skill = {
             title: 'Framework',
             value: 'framework',
           },
+          { title: 'Language', value: 'language' },
         ],
       },
     },

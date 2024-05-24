@@ -1,9 +1,9 @@
-import { Button } from '@/components/ui/button';
+import SkillsSection from '@/app/sections/skills/SkillsSection';
 
 export default function Home() {
   return (
-    <main>
-      <Button>Test</Button>
+    <main className="container">
+      <SkillsSection />
     </main>
   );
 }
