@@ -2,12 +2,13 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 
+import useHover from '@/app/hooks/useHover';
 import CategorySelect from '@/app/sections/skills/CategorySelect';
 import Block from '@/components/Block';
 import Grid from '@/components/Grid';
 import Heading from '@/components/Heading';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Skill } from '../../../../types/skill';
 
 type DisplaySkillsProps = {
@@ -21,26 +22,7 @@ export default function DisplaySkills({
   framework,
 }: DisplaySkillsProps) {
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
-  const [isHovering, setIsHovering] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (!isHovering) {
-      const timeout = setTimeout(() => {
-        setHoveredId(null);
-      }, 150);
-      return () => clearTimeout(timeout);
-    }
-  }, [isHovering]);
-
-  function handleMouseEnter(id: string) {
-    setIsHovering(true);
-    setHoveredId(id);
-  }
-
-  function handleMouseLeave() {
-    setIsHovering(false);
-  }
+  const { hoveredId, handleMouseEnter, handleMouseLeave } = useHover();
 
   function renderSkills(array: Skill[]) {
     return array.map(({ _id, name, logo }) => (
