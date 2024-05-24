@@ -27,8 +27,13 @@ const project = {
     {
       name: 'stack',
       title: 'Stack',
-      type: 'reference',
-      to: [{ type: 'skill' }],
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'skill' }],
+        },
+      ],
     },
     {
       name: 'block',

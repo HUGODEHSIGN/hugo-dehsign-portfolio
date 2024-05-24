@@ -1,3 +1,11 @@
+import { ContentType } from '../../types/block';
+
+type ParentType = {
+  parent: {
+    type: ContentType;
+  };
+};
+
 const content = {
   name: 'content',
   title: 'Content',
@@ -20,25 +28,25 @@ const content = {
       name: 'heading',
       title: 'Heading',
       type: 'string',
-      hidden: ({ parent }) => parent?.type !== 'heading',
+      hidden: ({ parent }: ParentType) => parent?.type !== 'heading',
     },
     {
       name: 'paragraph',
       title: 'Paragraph',
       type: 'text',
-      hidden: ({ parent }) => parent?.type !== 'paragraph',
+      hidden: ({ parent }: ParentType) => parent?.type !== 'paragraph',
     },
     {
       name: 'image',
       title: 'Image',
       type: 'image',
-      hidden: ({ parent }) => parent?.type !== 'image',
+      hidden: ({ parent }: ParentType) => parent?.type !== 'image',
     },
     {
       name: 'alt',
       title: 'Alt',
       type: 'string',
-      hidden: ({ parent }) => parent?.type !== 'image',
+      hidden: ({ parent }: ParentType) => parent?.type !== 'image',
     },
   ],
 };
