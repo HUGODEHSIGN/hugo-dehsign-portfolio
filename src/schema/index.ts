@@ -3,11 +3,11 @@ import skill from '@/schema/skill';
 
 import content from '@/schema/content';
 
-import twoFour from '@/schema/block/TwoFour';
 import fourTwo from '@/schema/block/fourTwo';
 import oneTwo from '@/schema/block/oneTwo';
 import six from '@/schema/block/six';
 import three from '@/schema/block/three';
+import twoFour from '@/schema/block/twoFour';
 import twoOne from '@/schema/block/twoOne';
 
 const blocks = [oneTwo, twoOne, three, twoFour, fourTwo, six];
