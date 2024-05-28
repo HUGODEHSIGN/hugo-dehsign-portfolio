@@ -1,8 +1,8 @@
 import ProjectPreview from '@/app/sections/projects/ProjectPreview';
-import { projectPreview } from '../../../../types/project';
+import { ProjectPreview as Project } from '../../../../types/project';
 
 type DisplayProjectsProps = {
-  projects: projectPreview[];
+  projects: Project[];
 };
 
 export default function DisplayProjects({ projects }: DisplayProjectsProps) {
