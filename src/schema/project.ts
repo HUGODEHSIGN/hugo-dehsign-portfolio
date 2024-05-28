@@ -15,6 +15,19 @@ const project = {
       options: { source: 'name' },
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+    },
+    {
+      name: 'preview',
+      title: 'Preview',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: 'github',
       title: 'GitHub',
       type: 'url',

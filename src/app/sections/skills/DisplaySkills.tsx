@@ -44,7 +44,9 @@ export default function DisplaySkills({
           row={1}
           isHovered={hoveredId === _id}
           hoverContent={
-            <div className="text-primary-foreground font-semibold">{name}</div>
+            <div className="text-primary-foreground text-sm font-semibold">
+              {name}
+            </div>
           }
           onMouseEnter={() => handleMouseEnter(_id)}
           onMouseLeave={handleMouseLeave}>
@@ -88,10 +90,6 @@ export default function DisplaySkills({
           setState={setCategoryFilter}
         />
       </Block>
-      {/* {renderSkills(language)}
-      {renderSkills(frontend)}
-      {renderSkills(backend)}
-      {renderSkills(framework)} */}
       <AnimatePresence>{renderCategories()}</AnimatePresence>
     </Grid>
   );

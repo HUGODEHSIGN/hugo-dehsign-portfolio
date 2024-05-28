@@ -1,8 +1,6 @@
-import { ContentType } from '../../types/block';
-
 type ParentType = {
   parent: {
-    type: ContentType;
+    type: 'heading' | 'paragraph' | 'image';
   };
 };
 
@@ -40,6 +38,9 @@ const content = {
       name: 'image',
       title: 'Image',
       type: 'image',
+      options: {
+        hotspot: true,
+      },
       hidden: ({ parent }: ParentType) => parent?.type !== 'image',
     },
     {
