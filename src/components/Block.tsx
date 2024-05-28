@@ -48,8 +48,9 @@ export default function Block({
 
     if (col === row) return 'aspect-square';
     if (col / row === 2) return 'aspect-[2/1]';
-    if (row / col === 2) return 'aspect-[1/2]';
+    if (row / col === 2) return 'h-full';
     if (col / row === 3) return 'aspect-[3/1]';
+    return 'aspect-[3/2]';
   }
 
   return (
@@ -63,7 +64,7 @@ export default function Block({
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute top-4 left-4 right-4 bottom-4 rounded-lg bg-primary/90 z-10 flex justify-center items-center"
+            className="absolute top-6 left-6 right-6 bottom-6 rounded-lg bg-primary/90 z-10 flex justify-center items-center p-3"
             layoutId="overlay"
             initial={{ opacity: 0 }}
             animate={{

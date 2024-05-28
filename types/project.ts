@@ -1,31 +1,20 @@
-import { Block } from './block';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { Skill } from './skill';
 
-export interface Project {
-  _createdAt: string;
+export interface ProjectPreview {
   _id: string;
-  _rev: string;
-  _type: 'project';
-  _updatedAt: string;
-  block: Block[];
+  name: string;
+  slug: string;
+  description: string;
   github: string;
   link: string;
+  preview: SanityImageSource;
+}
+
+export interface Project {
   name: string;
-  slug: Slug;
-  stack: Stack[];
-}
-
-export interface Slug {
-  _type: 'slug';
-  current: string;
-}
-
-export interface Stack {
-  _type: 'reference';
-  _key: string;
-  _ref: string;
-  _strengthenOnPublish?: StrengthenOnPublish;
-}
-
-export interface StrengthenOnPublish {
-  type: string;
+  description: string;
+  link: string;
+  github: string;
+  stack: Skill[];
 }
