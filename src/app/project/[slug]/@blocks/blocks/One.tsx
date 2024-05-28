@@ -10,7 +10,8 @@ export default function One({ one }: OneProps) {
   return (
     <Block
       col={1}
-      row={1}>
+      row={1}
+      side="center">
       <BlockContent content={one} />
     </Block>
   );

@@ -18,7 +18,10 @@ export default function TwoFour({ two, four }: TwoFourProps) {
         two={two!}
         orientation="vertical"
       />
-      <Four four={four!} />
+      <Four
+        four={four!}
+        side="center"
+      />
     </>
   );
 }

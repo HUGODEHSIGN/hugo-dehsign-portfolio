@@ -4,13 +4,16 @@ import { ContentType } from '../../../../../../types/block';
 
 type TwoProps = {
   orientation: 'horizontal' | 'vertical';
+  side?: 'left' | 'right';
   two: ContentType;
 };
 
-export default function Two({ two, orientation }: TwoProps) {
+export default function Two({ two, orientation, side }: TwoProps) {
   if (orientation === 'horizontal') {
     return (
-      <Block col={2}>
+      <Block
+        col={2}
+        side={side}>
         <BlockContent
           content={two}
           aspect="2/1"

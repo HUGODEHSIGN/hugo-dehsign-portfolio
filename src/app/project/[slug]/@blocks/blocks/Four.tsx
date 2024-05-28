@@ -4,13 +4,15 @@ import { ContentType } from '../../../../../../types/block';
 
 type FourProps = {
   four: ContentType;
+  side?: 'left' | 'right' | 'center';
 };
 
-export default function Four({ four }: FourProps) {
+export default function Four({ four, side }: FourProps) {
   return (
     <Block
       col={2}
-      row={2}>
+      row={2}
+      side={side}>
       <BlockContent content={four!} />
     </Block>
   );

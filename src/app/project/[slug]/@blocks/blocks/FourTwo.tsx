@@ -14,7 +14,10 @@ type FourTwoProps = {
 export default function FourTwo({ four, two }: FourTwoProps) {
   return (
     <>
-      <Four four={four!} />
+      <Four
+        four={four!}
+        side="center"
+      />
       <Two
         two={two!}
         orientation="vertical"

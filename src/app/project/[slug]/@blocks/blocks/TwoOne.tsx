@@ -16,6 +16,7 @@ export default function TwoOne({ two, one }: TwoOneProps) {
     <>
       <Two
         two={two!}
+        side="left"
         orientation="horizontal"
       />
       <One one={one!} />

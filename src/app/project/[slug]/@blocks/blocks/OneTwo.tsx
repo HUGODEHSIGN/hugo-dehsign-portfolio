@@ -17,6 +17,7 @@ export default function OneTwo({ one, two }: OneTwoProps) {
       <One one={one!} />
       <Two
         two={two!}
+        side="right"
         orientation="horizontal"
       />
     </>
