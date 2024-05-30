@@ -1,6 +1,7 @@
 'use client';
 
 import SectionTabs from '@/app/sections/SectionTabs';
+import Navbar from '@/components/Navbar';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -24,7 +25,9 @@ export default function SectionsContainer({
   };
   const skills = { name: 'skills', display: 'Skills', node: skillsSection };
 
-  const [renderArray, setRenderArray] = useState([about, projects, skills]);
+  const initialArray = [about, projects, skills];
+
+  const [renderArray, setRenderArray] = useState(initialArray);
 
   useEffect(() => {
     setRenderArray((prev) => reorderArray(prev, section));
@@ -54,9 +57,14 @@ export default function SectionsContainer({
 
   return (
     <>
-      <SectionTabs
-        sections={renderArray.map(({ name, display }) => ({ name, display }))}
-      />
+      <Navbar>
+        <SectionTabs
+          sections={initialArray.map(({ name, display }) => ({
+            name,
+            display,
+          }))}
+        />
+      </Navbar>
       <AnimatePresence>{renderNode(renderArray)}</AnimatePresence>
     </>
   );
