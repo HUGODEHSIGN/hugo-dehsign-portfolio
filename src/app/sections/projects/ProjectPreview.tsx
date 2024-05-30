@@ -1,8 +1,8 @@
 import ProjectImage from '@/app/sections/projects/projectPreview/ProjectImage';
 import ProjectOverlay from '@/app/sections/projects/projectPreview/ProjectOverlay';
-import { ProjectPreview } from '../../../../types/project';
+import { ProjectPreview as Project } from '../../../../types/project';
 
-type ProjectPreviewProps = ProjectPreview;
+type ProjectPreviewProps = Project;
 export default function ProjectPreview(props: ProjectPreviewProps) {
   const { name, slug, description, github, link, preview } = props;
   return (
