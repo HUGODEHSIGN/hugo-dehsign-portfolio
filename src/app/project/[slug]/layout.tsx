@@ -5,7 +5,7 @@ import { ReactNode } from 'react';
 
 type LayoutProps = {
   children: ReactNode;
-  [key: string]: ReactNode;
+  blocks: ReactNode;
 };
 
 export default function Layout({ children, blocks }: LayoutProps) {
