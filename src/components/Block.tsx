@@ -61,7 +61,7 @@ export default function Block({
       <motion.div
         initial={{ translateX: -200, opacity: 0 }}
         whileInView={{ translateX: 0, opacity: 100 }}
-        viewport={{ margin: '-400px' }}
+        viewport={{ margin: '-400px 0px -400px 0px' }}
         className={cn(
           blockVariants({ col, row, className }),
           getAspect(col, row)
@@ -95,7 +95,7 @@ export default function Block({
       <motion.div
         initial={{ translateX: 200, opacity: 0 }}
         whileInView={{ translateX: 0, opacity: 100 }}
-        viewport={{ margin: '-200px' }}
+        viewport={{ margin: '-400px 0px -400px 0px' }}
         className={cn(
           blockVariants({ col, row, className }),
           getAspect(col, row)
@@ -129,7 +129,7 @@ export default function Block({
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 100 }}
-        viewport={{ margin: '-250px' }}
+        viewport={{ margin: '-100px 0px -100px 0px' }}
         className={cn(
           blockVariants({ col, row, className }),
           getAspect(col, row)

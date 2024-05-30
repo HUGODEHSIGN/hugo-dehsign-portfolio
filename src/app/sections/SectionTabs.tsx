@@ -1,7 +1,6 @@
 'use client';
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { AnimatePresence, motion } from 'framer-motion';
 import { useParams, useRouter } from 'next/navigation';
 
 type SectionTabsProps = {
@@ -14,21 +13,22 @@ export default function SectionTabs({ sections }: SectionTabsProps) {
 
   function renderTabs() {
     return sections.map(({ name, display }) => (
-      <motion.div
-        key={name}
-        layoutId={name + 'Tab'}>
-        <TabsTrigger value={name}>{display}</TabsTrigger>
-      </motion.div>
+      <div key={name}>
+        <TabsTrigger
+          value={name}
+          className="data-[state=active]:bg-foreground data-[state=active]:text-background">
+          {display}
+        </TabsTrigger>
+      </div>
     ));
   }
 
   return (
     <Tabs
       defaultValue={section || sections[0].name}
-      onValueChange={(value) => router.replace(`/${value}`)}
-      className="w-[400px]">
-      <TabsList>
-        <AnimatePresence>{renderTabs()}</AnimatePresence>
+      onValueChange={(value) => router.replace(`/${value}`)}>
+      <TabsList className="bg-muted-foreground text-muted">
+        {renderTabs()}
       </TabsList>
     </Tabs>
   );

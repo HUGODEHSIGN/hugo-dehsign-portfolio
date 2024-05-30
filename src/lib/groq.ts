@@ -27,6 +27,15 @@ export async function getProjects() {
   );
 }
 
+export async function getSlugs() {
+  return await client.fetch(
+    groq`*[_type == "project"]{
+    name,
+    "slug": slug.current,
+  }`
+  );
+}
+
 export async function getProject(slug: string) {
   return await client.fetch(
     groq`*[_type == "project" && slug.current == $slug][0]{

@@ -1,3 +1,4 @@
+import Footer from '@/app/Footer';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans as FontSans } from 'next/font/google';
@@ -19,10 +20,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          'min-h-screen bg-background font-sans antialiased overflow-x-hidden',
           fontSans.variable
         )}>
         {children}
+        <Footer />
       </body>
     </html>
   );
