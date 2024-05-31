@@ -8,9 +8,9 @@ import { AnimatePresence, HTMLMotionProps, motion } from 'framer-motion';
 const blockVariants = cva('border rounded-lg p-6 relative', {
   variants: {
     col: {
-      1: 'col-span-1',
-      2: 'col-span-2',
-      3: 'col-span-3',
+      1: 'col-span-3 sm:col-span-1',
+      2: 'col-span-3 sm:col-span-2',
+      3: 'col-span-3 sm:col-span-3',
     },
     row: {
       1: 'row-span-1',
@@ -71,7 +71,7 @@ export default function Block({
         <AnimatePresence>
           {isHovered && (
             <motion.div
-              className="absolute top-6 left-6 right-6 bottom-6 rounded-lg bg-primary/90 z-10 flex justify-center items-center p-3"
+              className="absolute top-6 left-6 right-6 bottom-6 sm:top-6 sm:left-6 sm:right-6 sm:bottom-6 rounded-lg bg-primary/90 z-10 flex justify-center items-center p-3"
               layoutId="overlay"
               initial={{ opacity: 0 }}
               animate={{
@@ -169,7 +169,7 @@ export default function Block({
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute top-6 left-6 right-6 bottom-6 rounded-lg bg-primary/90 z-10 flex justify-center items-center p-3"
+            className="absolute top-1 left-1 right-1 bottom-1 md:top-2 md:left-2 md:right-2 md:bottom-2 lg:top-4 lg:left-4 lg:right-4 lg:bottom-4 xl:top-6 xl:left-6 xl:right-6 xl:bottom-6 rounded-lg bg-primary/90 z-10 flex justify-center items-center p-3"
             layoutId="overlay"
             initial={{ opacity: 0 }}
             animate={{

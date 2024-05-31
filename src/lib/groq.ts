@@ -13,6 +13,18 @@ export async function getSkills(category: string) {
   );
 }
 
+export async function getMainStack() {
+  return await client.fetch(groq`*[_type == "mainStack"][0]{
+    "stack": stack[]->{_id, name, "logo": logo.asset->url},
+  }`);
+}
+
+export async function getAbout() {
+  return await client.fetch(groq`*[_type == "about"][0]{
+    aboutMe,
+  }`);
+}
+
 export async function getProjects() {
   return await client.fetch(
     groq`*[_type == "project"]{

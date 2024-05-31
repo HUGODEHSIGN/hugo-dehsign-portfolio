@@ -1,4 +1,4 @@
-import Footer from '@/app/Footer';
+import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans as FontSans } from 'next/font/google';

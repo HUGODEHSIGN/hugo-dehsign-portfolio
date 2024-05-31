@@ -20,7 +20,7 @@ export default function BlockContent({
   if (content.type === 'paragraph')
     return (
       <div className="absolute top-0 left-0 right-0 bottom-0 bg-primary rounded-lg p-6">
-        <p className="text-3xl text-primary-foreground font-semibold text-balance">
+        <p className="text-xl sm:text-3xl text-primary-foreground font-semibold text-balance">
           {content.paragraph}
         </p>
       </div>

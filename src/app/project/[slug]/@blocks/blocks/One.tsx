@@ -10,8 +10,12 @@ export default function One({ one }: OneProps) {
   return (
     <Block
       col={1}
-      row={1}
-      side="center">
+      side="center"
+      className={
+        one?.type === 'image'
+          ? 'aspect-square'
+          : 'aspect-[3/1] sm:aspect-square'
+      }>
       <BlockContent content={one} />
     </Block>
   );

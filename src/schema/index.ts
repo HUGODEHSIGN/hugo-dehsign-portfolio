@@ -1,3 +1,5 @@
+import about from '@/schema/about';
+import mainStack from '@/schema/mainStack';
 import project from '@/schema/project';
 import skill from '@/schema/skill';
 
@@ -12,7 +14,7 @@ import twoOne from '@/schema/block/twoOne';
 
 const blocks = [oneTwo, twoOne, three, twoFour, fourTwo, six];
 
-const etc = [skill, content, project];
+const etc = [skill, content, project, mainStack, about];
 
 // ---------------------------------------------------
 
