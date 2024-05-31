@@ -4,9 +4,9 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="container my-4">
-      <nav className="flex flex-row justify-between p-6 bg-primary rounded-lg">
-        <Button variant="outline">Back</Button>
-        <div className="flex flex-row gap-2">
+      <nav className="flex flex-col sm:flex-row gap-6 sm:gap-0 justify-between p-6 bg-primary rounded-lg">
+        <Button variant="outline">Hugo Dehsign</Button>
+        <div className="flex flex-col sm:flex-row items-start gap-2">
           <Button
             variant="link"
             className="text-primary-foreground">

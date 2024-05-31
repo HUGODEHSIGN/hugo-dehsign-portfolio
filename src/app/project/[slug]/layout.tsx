@@ -10,7 +10,7 @@ type LayoutProps = {
 
 export default function Layout({ children, blocks }: LayoutProps) {
   return (
-    <main className="container flex flex-col gap-4">
+    <main className="container flex flex-col gap-4 w-screen overflow-hidden">
       <Navbar>
         <FetchSlugs />
       </Navbar>

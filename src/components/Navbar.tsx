@@ -5,7 +5,7 @@ type NavbarProps = {
 };
 export default function Navbar({ children }: NavbarProps) {
   return (
-    <header className="flex flex-row justify-between items-center rounded-lg bg-primary shadow mt-6 p-6">
+    <header className="flex flex-col sm:flex-row gap-4 justify-between items-center rounded-lg bg-primary shadow mt-6 p-6">
       <Link href="/">
         <h1 className="text-3xl font-bold  text-primary-foreground">
           Hugo Dehsign

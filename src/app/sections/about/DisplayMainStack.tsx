@@ -5,57 +5,57 @@ import Block from '@/components/Block';
 import Image from 'next/image';
 import { Skill } from '../../../../types/skill';
 
-type StackBlockProps = {
+type DisplayMainStackProps = {
   stack: Skill[];
 };
 
-export default function StackBlock({ stack }: StackBlockProps) {
+export default function DisplayMainStack({ stack }: DisplayMainStackProps) {
   const { hoveredId, handleMouseEnter, handleMouseLeave } = useHover();
+
   return (
     <>
-      <Block
-        col={3}
-        row={1}
-        className="flex items-end sm:hidden">
-        <h3 className="text-5xl font-bold">Stack</h3>
-      </Block>
-
-      <Block
-        col={1}
-        row={1}
-        className=" hidden sm:flex items-end">
-        <h3 className="text-5xl font-bold">Stack</h3>
-      </Block>
-
-      <div className="grid grid-cols-3 col-span-3 gap-2 sm:hidden">
-        {stack.map(({ _id, name, logo }) => (
+      <div className="grid grid-cols-3 col-span-3 gap-4 sm:hidden">
+        <Block
+          col={3}
+          row={1}
+          className="flex items-center">
+          <h2 className="text-3xl font-bold">Main Stack</h2>
+        </Block>
+        {stack.map(({ _id, logo, name }) => (
           <>
             <Block
+              key={_id}
               col={1}
               row={1}
-              className="col-span-1"
-              key={name}>
+              className="col-span-1">
               <Image
-                fill={true}
                 src={logo}
                 alt={name}
+                fill={true}
+                className="rounded-lg"
               />
             </Block>
             <Block
+              key={_id}
               col={2}
-              className="col-span-2">
-              {name}
+              className="col-span-2 flex items-center">
+              <p className="text-xl font-semibold">{name}</p>
             </Block>
           </>
         ))}
       </div>
-
-      <div className="hidden sm:grid grid-cols-2 gap-2">
-        {stack.map(({ _id, name, logo }) => (
+      <div className="hidden sm:grid grid-cols-2 gap-4">
+        <Block
+          col={2}
+          row={2}
+          className="hidden sm:flex items-end lg:hidden">
+          <h3 className="text-3xl font-bold">Main Stack</h3>
+        </Block>
+        {stack.map(({ _id, logo, name }) => (
           <Block
+            key={_id}
             col={1}
             row={1}
-            key={name}
             isHovered={hoveredId === _id}
             hoverContent={
               <div className="text-primary-foreground text-sm font-semibold">
@@ -65,9 +65,10 @@ export default function StackBlock({ stack }: StackBlockProps) {
             onMouseEnter={() => handleMouseEnter(_id)}
             onMouseLeave={handleMouseLeave}>
             <Image
-              fill={true}
               src={logo}
               alt={name}
+              fill={true}
+              className="rounded-lg"
             />
           </Block>
         ))}

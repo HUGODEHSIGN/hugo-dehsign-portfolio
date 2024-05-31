@@ -19,7 +19,7 @@ export default function Heading({ h = 2, className, ...props }: HeadingProps) {
     return (
       <h2
         className={cn(
-          'text-6xl font-bold bg-gradient-to-r from-rose-500 to-amber-500 inline-block text-transparent bg-clip-text',
+          'text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-rose-500 to-amber-500 inline-block text-transparent bg-clip-text',
           className
         )}
         {...props}

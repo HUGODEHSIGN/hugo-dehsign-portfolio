@@ -13,7 +13,12 @@ export default function Two({ two, orientation, side }: TwoProps) {
     return (
       <Block
         col={2}
-        side={side}>
+        side={side}
+        className={
+          two?.type === 'image'
+            ? 'aspect-[2/1] sm:aspect-auto'
+            : 'aspect-[3/1] sm:aspect-auto'
+        }>
         <BlockContent
           content={two}
           aspect="2/1"
@@ -26,7 +31,7 @@ export default function Two({ two, orientation, side }: TwoProps) {
     <Block
       col={1}
       row={2}
-      className="h-full">
+      className="aspect-[1/2] sm:h-full">
       <BlockContent
         content={two}
         aspect="1/2"
