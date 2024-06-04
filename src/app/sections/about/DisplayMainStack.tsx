@@ -24,7 +24,7 @@ export default function DisplayMainStack({ stack }: DisplayMainStackProps) {
         {stack.map(({ _id, logo, name }) => (
           <>
             <Block
-              key={_id}
+              key={_id + 'main-mobile'}
               col={1}
               row={1}
               className="col-span-1">
@@ -53,7 +53,7 @@ export default function DisplayMainStack({ stack }: DisplayMainStackProps) {
         </Block>
         {stack.map(({ _id, logo, name }) => (
           <Block
-            key={_id}
+            key={_id + 'main-desktop'}
             col={1}
             row={1}
             isHovered={hoveredId === _id}

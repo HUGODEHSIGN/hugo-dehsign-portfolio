@@ -77,7 +77,11 @@ export default function ProjectOverlay({
                   className="w-fit"
                   variant="secondary"
                   asChild>
-                  <Link href={link}>Go now</Link>
+                  <Link
+                    href={link}
+                    target="_blank">
+                    Go now
+                  </Link>
                 </Button>
               </motion.div>
             </div>
@@ -108,7 +112,11 @@ export default function ProjectOverlay({
                   className="w-fit"
                   variant="secondary"
                   asChild>
-                  <Link href={github}>GitHub</Link>
+                  <Link
+                    href={github}
+                    target="_blank">
+                    GitHub
+                  </Link>
                 </Button>
               </motion.div>
             </div>

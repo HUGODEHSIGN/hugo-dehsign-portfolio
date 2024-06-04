@@ -28,7 +28,7 @@ export default function DisplaySkills({
     return array.map(({ _id, name, logo }) => (
       <>
         <motion.div
-          key={_id}
+          key={_id + 'mobile'}
           layout
           initial={{ opacity: 0 }}
           animate={{
@@ -61,7 +61,7 @@ export default function DisplaySkills({
 
         {/* desktop */}
         <motion.div
-          key={_id}
+          key={_id + 'desktop'}
           layout
           initial={{ opacity: 0 }}
           animate={{
