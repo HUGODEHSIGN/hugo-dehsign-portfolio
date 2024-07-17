@@ -1,5 +1,8 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { toast } from 'sonner';
 
 export default function Footer() {
   return (
@@ -11,7 +14,7 @@ export default function Footer() {
             variant="link"
             className="text-primary-foreground">
             <Link
-              href="https://www.google.com/"
+              href="https://www.linkedin.com/in/hugo-hsi/"
               target="_blank">
               LinkedIn
             </Link>
@@ -20,19 +23,19 @@ export default function Footer() {
             variant="link"
             className="text-primary-foreground">
             <Link
-              href="https://www.google.com/"
+              href="https://github.com/HUGODEHSIGN/"
               target="_blank">
               Github
             </Link>
           </Button>
           <Button
             variant="link"
-            className="text-primary-foreground">
-            <Link
-              href="https://www.google.com/"
-              target="_blank">
-              hhsi@hugodehsign.com
-            </Link>
+            className="text-primary-foreground"
+            onClick={() => {
+              navigator.clipboard.writeText('hhsi@hugodehsign');
+              toast('Copied to clipboard');
+            }}>
+            hhsi@hugodehsign
           </Button>
         </div>
       </nav>
